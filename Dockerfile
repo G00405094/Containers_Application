@@ -1,4 +1,9 @@
-FROM ubuntu:latest
-LABEL authors="G00405094@atu.ie"
+FROM openjdk:17
 
-ENTRYPOINT ["top", "-b"]
+WORKDIR /app
+
+COPY target/Week9_Containers-0.0.1-SNAPSHOT.jar /app
+
+EXPOSE 8080
+
+CMD ["java", "-jar", "Week9_Containers-0.0.1-SNAPSHOT.jar"]
